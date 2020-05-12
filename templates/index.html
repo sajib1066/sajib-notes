@@ -10,14 +10,14 @@
         {% for note in object_list  %}
         <div class="col-md-12">
             <div class="blog-entry ftco-animate d-md-flex">
-                <a href="single.html" class="img img-2" style="background-image: url({{ note.photo.url }})"></a>
+                <a href="{% url 'note-details' note.slug %}" class="img img-2" style="background-image: url({{ note.photo.url }})"></a>
                 <div class="text text-2 pl-md-4">
-                    <h3 class="mb-2"><a href="single.html">{{ note.title }}</a></h3>
+                    <h3 class="mb-2"><a href="{% url 'note-details' note.slug %}">{{ note.title }}</a></h3>
                     <div class="meta-wrap">
                         <p class="meta">
                             <span><i class="icon-calendar mr-2"></i>{{ note.published_date }}</span>
                             <span>
-                                <a href="single.html"><i class="icon-folder-o mr-2"></i>{{ note.category }}</a>
+                                <a href="#"><i class="icon-folder-o mr-2"></i>{{ note.category }}</a>
                             </span>
                             <span><i class="icon-comment2 mr-2"></i>{{ note.comment.count }} Comment</span>
                         </p>

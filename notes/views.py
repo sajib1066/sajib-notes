@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import (
+    DetailView
+)
+from .models import Note
 
-# Create your views here.
+class NoteDetailView(DetailView):
+    queryset = Note.objects.all()
+    template_name = 'notes/details.html'
