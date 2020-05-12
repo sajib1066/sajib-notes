@@ -10,6 +10,17 @@ class Profile(models.Model):
     photo = models.ImageField(upload_to='profile/')
     title = models.CharField(max_length=240)
     about = models.TextField()
+    phone_number = models.CharField(max_length=14, unique=True)
+    gender_choice = (
+        ('male', 'Male'),
+        ('female', 'Female')
+    )
+    gender = models.CharField(choices=gender_choice, max_length=6)
+    facebook = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
+    website = models.URLField(blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
