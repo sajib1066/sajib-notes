@@ -18,11 +18,12 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 from . import settings
-from .views import HomePage
+from .views import HomePage, about_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePage.as_view()),
+    path('about/', about_page, name='about'),
     path('note/', include('notes.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
