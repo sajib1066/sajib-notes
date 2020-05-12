@@ -22,7 +22,7 @@ from .views import HomePage, about_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomePage.as_view()),
+    path('', HomePage.as_view(), name='home'),
     path('about/', about_page, name='about'),
     path('note/', include('notes.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
