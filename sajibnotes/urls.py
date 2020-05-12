@@ -18,9 +18,11 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 from . import settings
+from .views import HomePage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', HomePage.as_view()),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
