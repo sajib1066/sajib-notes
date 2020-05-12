@@ -10,18 +10,7 @@
             <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
             {% include 'base/sidebar.html' %}
             <!-- END COLORLIB-ASIDE -->
-            <div id="colorlib-main">
-                <section class="ftco-section ftco-no-pt ftco-no-pb">
-                    <div class="container">
-                        <div class="row d-flex">
-                            {% block content %} {% endblock %}
-
-                            {% include 'base/leftsidebar.html' %}
-                            <!-- END COL -->
-                        </div>
-                    </div>
-                </section>
-            </div>
+            {% block content %} {% endblock %}
             <!-- END COLORLIB-MAIN -->
         </div>
         <!-- END COLORLIB-PAGE -->
