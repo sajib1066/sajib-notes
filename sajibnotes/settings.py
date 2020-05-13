@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3rd party
     'ckeditor',
     'ckeditor_uploader',
+    'contactforms',
 
     # local
     'account',

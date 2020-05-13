@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from contactforms.forms import ContactForm
 
 from notes.models import Note
 
@@ -11,4 +12,8 @@ def about_page(request):
     return render(request, 'about.html')
 
 def contact_page(request):
-    return render(request, 'contact.html')
+    forms = ContactForm()
+    context = {
+        'forms': forms
+    }
+    return render(request, 'contact.html', context)
