@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # local
     'account',
     'notes',
+    'project',
 ]
 
 MIDDLEWARE = [
