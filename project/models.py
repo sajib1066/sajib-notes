@@ -21,7 +21,7 @@ class Tag(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=240)
     slug = models.SlugField(max_length=120, unique=True)
-    photo = models.ImageField(upload_to='notes/')
+    video_url = models.URLField()
     content = RichTextUploadingField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tag = models.ManyToManyField(Tag)
