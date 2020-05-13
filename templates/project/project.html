@@ -15,10 +15,10 @@
                         {% for project in object_list  %}
                         <div class="col-md-12">
 							<div class="blog-entry-2 ftco-animate">
-								<a href="single.html" class="img" style="background-image: url({{ project.photo.url }})"></a>
+                                <iframe width="560" height="315" src="{{ project.video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								<div class="text pt-4">
 						  <h3 class="mb-4"><a href="{% url 'project-details' project.slug %}">{{ project.title }}</a></h3>
-						  <p class="mb-4">{{ project.content|safe }}</p>
+						  <p class="mb-4">{{ project.content|safe|truncatewords:20 }}</p>
 						  <div class="author mb-4 d-flex align-items-center">
 								<a href="#" class="img" style="background-image: url({{ project.author.photo.url }})"></a>
 								<div class="ml-3 info">

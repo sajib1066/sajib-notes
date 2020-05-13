@@ -12,7 +12,7 @@
 					<div class="row pt-md-4">
 						<h1 class="mb-3">{{ project.title }}</h1>
 						<p>
-							<img src="{{ project.photo.url }}" alt="" class="img-fluid">
+							<iframe width="560" height="315" src="{{ project.video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</p>
 						<p>{{ project.content|safe }}</p>
 						<div class="tag-widget post-tag-container mb-5 mt-5">
