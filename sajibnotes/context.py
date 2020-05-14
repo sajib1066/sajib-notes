@@ -3,7 +3,7 @@ from notes import models as notemodel
 from project import models as projectmodel
 
 def note_context(request):
-    note_category = notemodel.Category.objects.all()
+    note_category = notemodel.Category.objects.all().annotate(number_of_note=Count('note')).order_by('-number_of_note', 'name')
     note_tag = notemodel.Tag.objects.all()
     popular_note = notemodel.Note.objects.filter(is_delete=False).order_by('-id')[:3]
 
