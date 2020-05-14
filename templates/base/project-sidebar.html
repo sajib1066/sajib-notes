@@ -28,17 +28,19 @@
 
     <!-- Popular Notes -->
     <div class="sidebar-box ftco-animate">
-        <h3 class="sidebar-heading">Popular Notes</h3>
+        <h3 class="sidebar-heading">Popular Projects</h3>
+        {% if popular_project %}
+        {% for project in popular_project %}
         <div class="block-21 mb-4 d-flex">
             <a class="blog-img mr-4" style="background-image: url({% static 'images/image_1.jpg' %});"></a>
             <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
+                <h3 class="heading"><a href="{% url 'project-details' project.slug %}">{{ project.title }}</a></h3>
                 <div class="meta">
                     <div>
-                        <a href="#"><span class="icon-calendar"></span> June 28, 2019</a>
+                        <a href="#"><span class="icon-calendar"></span>{{ project.published_date }}</a>
                     </div>
                     <div>
-                        <a href="#"><span class="icon-person"></span> Dave Lewis</a>
+                        <a href="#"><span class="icon-person"></span>{{ project.author }}</a>
                     </div>
                     <div>
                         <a href="#"><span class="icon-chat"></span> 19</a>
@@ -46,6 +48,10 @@
                 </div>
             </div>
         </div>
+        {% endfor %}
+        {% else %}
+        <p>No Project Found</p>
+        {% endif %}
     </div>
     <!-- Popular Notes -->
 
@@ -53,7 +59,13 @@
     <div class="sidebar-box ftco-animate">
         <h3 class="sidebar-heading">Tag Cloud</h3>
         <ul class="tagcloud">
-            <a href="#" class="tag-cloud-link">animals</a>
+            {% if project_tag %}
+            {% for tag in project_tag %}
+            <a href="#" class="tag-cloud-link">{{ tag.name }}</a>
+            {% endfor %}
+            {% else %}
+            <p>No Tags Found</p>
+            {% endif %}
         </ul>
     </div>
     <!-- Tags -->
