@@ -38,19 +38,25 @@
 				<div class="pt-5 mt-5">
 				  <h3 class="mb-5 font-weight-bold">6 Comments</h3>
 				  <ul class="comment-list">
+					{% if comment %}
+					{% for comment in comment %}
 					<li class="comment">
 					  <div class="vcard bio">
-						<img src="images/person_1.jpg" alt="Image placeholder">
+						<img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
 					  </div>
 					  <div class="comment-body">
-						<h3>John Doe</h3>
-						<div class="meta">October 03, 2018 at 2:21pm</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+						<h3>{{ comment.name }}</h3>
+						<div class="meta">{{ comment.date }}</div>
+						<p>{{ comment.message }}</p>
 						<p><a href="#" class="reply">Reply</a></p>
 					  </div>
 					</li>
+					{% endfor %}
+					{% else %}
+					<p>No Comment in this Note</p>
+					{% endif %}
 				
-					<li class="comment">
+					<!-- <li class="comment">
 					  <div class="vcard bio">
 						<img src="images/person_1.jpg" alt="Image placeholder">
 					  </div>
@@ -115,13 +121,39 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
 						<p><a href="#" class="reply">Reply</a></p>
 					  </div>
-					</li>
+					</li> -->
+
 				  </ul>
 				  <!-- END comment-list -->
 				  
 				  <div class="comment-form-wrap pt-5">
 					<h3 class="mb-5">Leave a comment</h3>
-					<form action="#" class="p-3 p-md-5 bg-light">
+					<form action="#" class="p-3 p-md-5 bg-light" method="POST">
+						{% csrf_token %}
+						<div class="form-group">
+						  <label for="name">Name *</label>
+						  {{ form.name }}
+						</div>
+						<div class="form-group">
+						  <label for="email">Email *</label>
+						  {{ form.email }}
+						</div>
+						<div class="form-group">
+						  <label for="website">Website</label>
+						  {{ form.website }}
+						</div>
+				  
+						<div class="form-group">
+						  <label for="message">Message</label>
+						  {{ form.message }}
+						</div>
+						<div class="form-group">
+						  <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+						</div>
+				  
+					  </form>
+
+					<!-- <form action="#" class="p-3 p-md-5 bg-light">
 					  <div class="form-group">
 						<label for="name">Name *</label>
 						<input type="text" class="form-control" id="name">
@@ -143,7 +175,7 @@
 						<input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
 					  </div>
 				
-					</form>
+					</form> -->
 				  </div>
 				</div>
 					</div><!-- END-->
