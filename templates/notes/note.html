@@ -29,7 +29,7 @@
                                     </div>
                                     <p class="mb-4">{{ note.content|safe|truncatewords:15 }}</p>
                                     <p>
-                                        <a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+                                        <a href="{% url 'note-details' note.slug %}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
                                     </p>
                                 </div>
                             </div>
