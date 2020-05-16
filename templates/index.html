@@ -6,66 +6,284 @@
 {% block content %}
 <div id="colorlib-main">
     <section class="ftco-section ftco-no-pt ftco-no-pb">
-        <div class="container">
-            <div class="row d-flex">
-                
-                <div class="col-xl-8 py-5 px-md-5">
-                    <div class="row pt-md-4">
-                        {% if object_list %}
-                        {% for note in object_list  %}
-                        <div class="col-md-12">
-                            <div class="blog-entry ftco-animate d-md-flex">
-                                <a href="{% url 'note-details' note.slug %}" class="img img-2" style="background-image: url({{ note.photo.url }})"></a>
-                                <div class="text text-2 pl-md-4">
-                                    <h3 class="mb-2"><a href="{% url 'note-details' note.slug %}">{{ note.title }}</a></h3>
-                                    <div class="meta-wrap">
-                                        <p class="meta">
-                                            <span><i class="icon-calendar mr-2"></i>{{ note.published_date }}</span>
-                                            <span>
-                                                <a href="#"><i class="icon-folder-o mr-2"></i>{{ note.category }}</a>
-                                            </span>
-                                            <span><i class="icon-comment2 mr-2"></i>{{ note.comment.count }} Comment</span>
-                                        </p>
-                                    </div>
-                                    <p class="mb-4">{{ note.content|safe|truncatewords:15 }}</p>
-                                    <p>
-                                        <a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% else %}
-                        <h3>No Notes Found!</h3>
-                        {% endif %}
-                
-                    </div>
-                    <!-- END Notes-->
-                
-                
-                    <!-- <div class="row">
-                        <div class="col">
-                            <div class="block-27">
-                                <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-                
-                </div>
+        <div class="container-fluid p-0">
 
-                {% include 'base/notes-sidebar.html' %}
-                <!-- END COL -->
-            </div>
-        </div>
+            <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+              <div class="w-100">
+                <h1 class="mb-0">Sajib
+                  <span class="text-primary">Hossain</span>
+                </h1>
+                <div class="subheading mb-5">Noyanagar, Uttara - Dhaka-1230
+                  Phone: <a href="tel:+8801317897143">+880 1317-897143</a>
+                  Email: <a href="mailto:sajib1066@gmail.com">sajib1066@gmail.com</a>
+                </div>
+                <p class="lead mb-5">
+                  I have been very interested in computers and programming since my college life.
+        Dream to be an expert software engineer so that I can build professional and useful
+        software that has business value. I am looking for a junior software engineer or related position in a reputed software company that can help me to
+        achieve my goal.
+                </p>
+                <div class="social-icons">
+                  <a href="https://www.linkedin.com/in/sajib1066/" data-toggle="tooltip" title="Linkedin">
+                      <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://github.com/sajib1066" data-toggle="tooltip" title="Github">
+                      <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://twitter.com/sajib1066" data-toggle="tooltip" title="Twitter">
+                      <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.facebook.com/sajib1066" data-toggle="tooltip" title="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://stackoverflow.com/users/10357252/sajib-hossain" data-toggle="tooltip" title="Stackoverflow">
+                      <i class="fab fa-stack-overflow"></i>
+                  </a>
+                  <a href="https://www.youtube.com/SajibHossain" data-toggle="tooltip" title="Youtube">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="https://www.hackerrank.com/sajib1066" data-toggle="tooltip" title="HackerRank">
+                    <i class="fab fa-hackerrank"></i>
+                  </a>
+                  <a href="https://pypi.org/user/sajib1066/" data-toggle="tooltip" title="PyPi">
+                    <i class="fab fa-python"></i>
+                  </a>
+              </div>
+              </div>
+            </section>
+        
+            <hr class="m-0">
+        
+            <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="training">
+              <div class="w-100">
+                <h2 class="mb-5">Professional Training</h2>
+        
+                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">Data and Exploratory Analysis with Python 3</h3>
+                    <div class="subheading mb-3"><a href="https://training.devskill.com/Course/ViewDetails/f11e00f3-c1ef-ce20-1ae7-08d52e7664f1">Dev Skill</a></div>
+                    <ul>
+                      <li>Advanced python3 programming</li>
+                      <li>Data scrapping</li>
+                      <li>Data Analysis with Pandas/Numpy</li>
+                      <li>Exploratory Data analysis</li>
+                      <li>Introduction to Machine Learning</li>
+                    </ul>
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">October, 2019 - January, 2020</span>
+                  </div>
+                </div>
+        
+                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">Web Development with Django</h3>
+                    <div class="subheading mb-3"><a href="http://www.banglaidjango.com/category/course/">Banglai Django</a></div>
+                    <ul>
+                      <li>Getting started with Django2</li>
+                      <li>How web works</li>
+                      <li>Basic Django ( models, views, templetes, urls, Forms)</li>
+                      <li>Django Queryset</li>
+                      <li>Model manager</li>
+                      <li>Class Based View</li>
+                      <li>Django Rest API</li>
+                      <li>How to write smart code</li>
+                      <li>Working with Postgresql Database</li>
+                      <li>Version control with Git</li>
+                      <li>Basic Javascript to use Rest API</li>
+                      <li>Blog project</li>
+                      <li>School Management System Project</li>
+                    </ul>
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">March, 2019 - September, 2019</span>
+                  </div>
+                </div>
+        
+              </div>
+        
+            </section>
+        
+            <hr class="m-0">
+        
+            <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+              <div class="w-100">
+                <h2 class="mb-5">Education</h2>
+        
+                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">Jashore Polytechnic Institute, Jashore</h3>
+                    <div class="subheading mb-3">Diploma in Engineering</div>
+                    <div>Computer Science</div>
+                    <p>GPA: 3.37</p>
+                    <p>-Participate Skills Competition 2018</p>
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">September 2015 - September 2019</span>
+                  </div>
+                </div>
+        
+              </div>
+            </section>
+        
+            <hr class="m-0">
+        
+            <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="projects">
+              <div class="w-100">
+                <h2 class="mb-5">Projects</h2>
+        
+                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">School Management System</h3>
+                    <p>
+                      Our School Management System (SMS) is intended to automate day to day school administrative work like Attendance, student info management, Class Routine, exam routine and much more. The provision of the software is to help school management to save time on day to day school activity. Once the School Management System is in use, it will enable the school management to access all the necessary information, reports, files & documents of all the departments of the school in seconds.
+        The school management system is completely an online web based solution, which can be accessed from anywhere online.
+                    </p>
+                    <a href="https://github.com/sajib1066/school_management_system" class="btn btn-outline-success">See Project</a>
+                    <a href="https://youtu.be/HvnPeeLEVq0" class="btn btn-outline-success">Project Preview</a>
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">July, 2019 - January, 2020</span>
+                  </div>
+                </div>
+        
+                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">Blog Application</h3>
+                    <p>
+                      This is Blog Application software. Here you can create blog and read another peoples Blog.
+                      This website made with django, html5, css3, bootstrap and other necessary tools.
+                    </p>
+                    <a href="https://github.com/sajib1066/django_blog_application" class="btn btn-outline-success">See Project</a>
+                    <a href="https://youtu.be/u-ZMbQxhNC8" class="btn btn-outline-success">Project Preview</a>
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">August, 2019 - December, 2019</span>
+                  </div>
+                </div>
+        
+              </div>
+        
+            </section>
+        
+            <hr class="m-0">
+        
+            <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+              <div class="w-100">
+                <h2 class="mb-5">Skills</h2>
+        
+                <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+                <ul class="list-inline dev-icons">
+                  <li class="list-inline-item">
+                    <i class="fab fa-python"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-java"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-js-square"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-html5"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-css3-alt"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-react"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-node-js"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-sass"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-git"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-github"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-bootstrap"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-linux"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fab fa-windows"></i>
+                  </li>
+                </ul>
+        
+                <div class="subheading mb-3">Technical Strengths</div>
+                <ul class="fa-ul mb-0">
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    <pre>Languages:             Python, JavaScript</pre></li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    <pre>Framework:             Django</pre>
+                  </li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    <pre>Web Technology:        Html5, Css3, Bootstrap</pre>
+                  </li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    <pre>Tools:                 Git, Vim, Github, Bitbucket</pre>
+                  </li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    <pre>Concepts:              RESTful Principles, Agile Methodologies</pre>
+                  </li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    <pre>Systems:               Linux, Windows</pre>
+                  </li>
+                </ul>
+              </div>
+            </section>
+        
+            <hr class="m-0">
+        
+            <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+              <div class="w-100">
+                <h2 class="mb-5">Interests</h2>
+                <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+                <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+              </div>
+            </section>
+        
+            <hr class="m-0">
+        
+            <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+              <div class="w-100">
+                <h2 class="mb-5">Awards &amp; Certifications</h2>
+                <ul class="fa-ul mb-0">
+                  <li>
+                    <i class="fa-li fa fa-trophy text-warning"></i>
+                    Google Analytics Certified Developer</li>
+                  <li>
+                    <i class="fa-li fa fa-trophy text-warning"></i>
+                    Mobile Web Specialist - Google Certification
+                  </li>
+                  <li>
+                    <i class="fa-li fa fa-trophy text-warning"></i>
+                    1<sup>st</sup>
+                    Place - James Buchanan High School - Hackathon 2006
+                  </li>
+                  <li>
+                    <i class="fa-li fa fa-trophy text-warning"></i>
+                    3<sup>rd</sup>
+                    Place - James Buchanan High School - Hackathon 2005
+                  </li>
+                </ul>
+              </div>
+            </section>
+        
+          </div>
     </section>
 </div>
+
 
 {% endblock %}
