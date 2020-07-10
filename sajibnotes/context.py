@@ -19,8 +19,6 @@ def project_context(request):
     project_tag = projectmodel.Tag.objects.all()
     popular_project = projectmodel.Project.objects.filter(is_delete=False).order_by('-id')[:3]
 
-    print('Project Category: ', project_category)
-
     context = {
         'project_ctg': project_category,
         'project_tag': project_tag,
