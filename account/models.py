@@ -7,6 +7,7 @@ class Profile(models.Model):
     current_user = get_current_user
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=current_user)
     name = models.CharField(max_length=120)
+    address = models.TextField()
     photo = models.ImageField(upload_to='profile/')
     title = models.CharField(max_length=240)
     about = models.TextField()
