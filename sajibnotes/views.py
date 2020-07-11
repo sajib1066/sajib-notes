@@ -19,7 +19,15 @@ def about_page(request):
 
 def contact_page(request):
     forms = ContactForm()
-    context = {
-        'forms': forms
-    }
-    return render(request, 'contact.html', context)
+    try:
+        profile = Profile.objects.get(user=request.user)
+        context = {
+            'forms': forms,
+            'profile': profile
+        }
+        return render(request, 'contact.html', context)
+    except:
+        context = {
+            'forms': forms
+        }
+        return render(request, 'contact.html', context)
