@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 from . import settings
-from .views import HomePage, about_page, contact_page
+from .views import HomePage, about_page, contact_page, home_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),

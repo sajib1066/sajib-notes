@@ -4,10 +4,24 @@ from contactforms.forms import ContactForm
 
 from notes.models import Note
 from account.models import Profile
+from account.forms import NewsLetterForm
 
 class HomePage(ListView):
     queryset = Note.objects.filter(is_delete=False)
     template_name = 'index.html'
+
+def home_page(request):
+    queryset = Note.objects.filter(is_delete=False)
+    forms = NewsLetterForm()
+    if request.method == 'POST':
+        forms = NewsLetterForm(request.POST)
+        if forms.is_valid():
+            forms.save()
+    context = {
+        'form': forms,
+        'queryset': queryset
+    }
+    return render(request, 'index.html', context)
 
 def about_page(request):
     try:
